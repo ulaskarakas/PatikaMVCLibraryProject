@@ -1,6 +1,6 @@
 ﻿namespace PatikaMVCLibraryProject.Models
 {
-    public class Author
+    public class AuthorDeleteViewModel
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

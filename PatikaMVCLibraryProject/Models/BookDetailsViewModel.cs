@@ -1,6 +1,6 @@
 ﻿namespace PatikaMVCLibraryProject.Models
 {
-    public class Book
+    public class BookDetailsViewModel
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -8,7 +8,6 @@
         public DateTime PublishDate { get; set; }
         public string ISBN { get; set; }
         public int CopiesAvailable { get; set; }
-        public int AuthorId { get; set; }
         public string AuthorName { get; set; } // Merge Name & Surname
     }
 }
