@@ -1,6 +1,12 @@
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+builder.Services.AddControllersWithViews(); // Add MVC services
 
-app.MapGet("/", () => "Hello World!");
+var app = builder.Build();
+app.UseStaticFiles(); // Add static files
+
+// Create default route
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
