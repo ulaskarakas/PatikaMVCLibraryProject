@@ -23,6 +23,14 @@ body {
     background-size: cover;
 }
 
+nav {
+    font-weight: bold;
+}
+
+label {
+    font-weight: 500;
+}
+
 footer {
     position: fixed;
     bottom: 0;
