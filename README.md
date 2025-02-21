@@ -29,14 +29,10 @@ The purpose of this project is to create a simple effective library management s
  ┃ ┣ 📜 AuthorListViewModel.cs
  ┃ ┣ 📜 AuthorCreateViewModel.cs
  ┃ ┣ 📜 AuthorEditViewModel.cs
- ┃ ┣ 📜 AuthorDetailsViewModel.cs
- ┃ ┣ 📜 AuthorDeleteViewModel.cs
  ┃ ┣ 📜 Book.cs
  ┃ ┣ 📜 BookListViewModel.cs
  ┃ ┣ 📜 BookCreateViewModel.cs
  ┃ ┣ 📜 BookEditViewModel.cs
- ┃ ┣ 📜 BookDetailsViewModel.cs
- ┃ ┣ 📜 BookDeleteViewModel.cs
  ┣ 📂 Views
  ┃ ┣ 📂 Author
  ┃ ┃ ┣ 📜 List.cshtml
