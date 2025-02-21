@@ -100,19 +100,11 @@ namespace PatikaMVCLibraryProject.Controllers
             if (author == null)
                 return NotFound();
 
-            var viewModel = new AuthorDetailsViewModel
-            {
-                Id = author.Id,
-                FirstName = author.FirstName,
-                LastName = author.LastName,
-                DateOfBirth = author.DateOfBirth,
-                Books = author.Books
-            };
-
-            return View(viewModel);
+            return View(author);
         }
 
         // Show delete author screen
+        [HttpGet]
         public IActionResult Delete(int id)
         {
             var author = authors.FirstOrDefault(a => a.Id == id);
@@ -120,16 +112,7 @@ namespace PatikaMVCLibraryProject.Controllers
             if (author == null) 
                 return NotFound();
 
-            var viewModel = new AuthorDeleteViewModel
-            {
-                Id = author.Id,
-                FirstName = author.FirstName,
-                LastName = author.LastName,
-                DateOfBirth = author.DateOfBirth,
-                Books = author.Books
-            };
-
-            return View(viewModel);
+            return View(author);
         }
 
         // Delete an author
@@ -144,8 +127,8 @@ namespace PatikaMVCLibraryProject.Controllers
             //Leave ownerless or delete book that are connected to the author
             foreach (var book in author.Books)
             {
-                book.AuthorId = 0; // Leave ownerless
-                book.AuthorName = "Unknown"; // Assign "Unknown" to AuthorName 
+                book.AuthorId = 0; 
+                book.AuthorName = "Unknown";
             }
 
             // Remove from author list

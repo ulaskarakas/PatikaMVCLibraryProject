@@ -44,6 +44,9 @@ namespace PatikaMVCLibraryProject.Controllers
         {
             var author = AuthorController.authors.FirstOrDefault(a => a.Id == model.AuthorId);
 
+            if (author == null)
+                return NotFound();
+
             var newBook = new Book
             {
                 Id = books.Any() ? books.Max(b => b.Id) + 1 : 1,
@@ -81,6 +84,9 @@ namespace PatikaMVCLibraryProject.Controllers
                 return NotFound();
 
             var author = AuthorController.authors.FirstOrDefault(a => a.Id == book.AuthorId);
+
+            if (author == null)
+                return NotFound();
 
             var viewModel = new BookEditViewModel()
             {
@@ -143,18 +149,7 @@ namespace PatikaMVCLibraryProject.Controllers
             if (book == null)
                 return NotFound();
 
-            var viewModel = new BookDetailsViewModel
-            {
-                Id = book.Id,
-                Title = book.Title,
-                Genre = book.Genre,
-                PublishDate = book.PublishDate,
-                ISBN = book.ISBN,
-                CopiesAvailable = book.CopiesAvailable,
-                AuthorName = book.AuthorName
-            };
-
-            return View(viewModel);
+            return View(book);
         }
 
         // Show delete book screen
@@ -166,21 +161,7 @@ namespace PatikaMVCLibraryProject.Controllers
             if (book == null)
                 return NotFound();
 
-            var author = AuthorController.authors.FirstOrDefault(a => a.Id == book.AuthorId);
-
-            var viewModel = new BookDeleteViewModel
-            {
-                Id = book.Id,
-                Title = book.Title,
-                Genre = book.Genre,
-                ISBN = book.ISBN,
-                PublishDate = book.PublishDate,
-                CopiesAvailable = book.CopiesAvailable,
-                AuthorId = author.Id,
-                AuthorName = $"{author.FirstName} {author.LastName}"
-            };
-
-            return View(viewModel);
+            return View(book);
         }
 
         // Delete a book
