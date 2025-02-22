@@ -18,13 +18,22 @@ html {
 }
 
 body {
-    margin-bottom: 60px;
     background: url('/images/background.png') no-repeat center center fixed;
     background-size: cover;
 }
 
 nav {
     font-weight: bold;
+}
+
+.content-wrapper {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 3rem;
+    border-radius: 10px;
+}
+
+.hover-text-primary:hover a {
+    color: var(--bs-primary) !important;
 }
 
 label {

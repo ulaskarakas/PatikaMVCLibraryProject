@@ -6,13 +6,13 @@
         <p><strong>Name Surname:</strong> @Model.FirstName @Model.LastName</p>
         <p><strong>Date of Birth:</strong> @Model.DateOfBirth.ToShortDateString()</p>
 
-        <h3>Books</h3>
+        <h5>Books</h5>
         @if (Model.Books.Any())
         {
-            <table class="table">
+            <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th>Book Name</th>
+                        <th>Title</th>
                         <th>Genre</th>
                         <th>Publish Date</th>
                     </tr>

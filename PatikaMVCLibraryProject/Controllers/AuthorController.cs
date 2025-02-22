@@ -112,6 +112,9 @@ namespace PatikaMVCLibraryProject.Controllers
             if (author == null) 
                 return NotFound();
 
+            if (author.Books.Count != 0)
+                ViewBag.error = "Deletion cannot be performed because there are books associating to this author. Before deleting the author, please remove all books associated to the author.";
+
             return View(author);
         }
 
@@ -123,13 +126,6 @@ namespace PatikaMVCLibraryProject.Controllers
 
             if (author == null)
                 return NotFound();
-
-            //Leave ownerless or delete book that are connected to the author
-            foreach (var book in author.Books)
-            {
-                book.AuthorId = 0; 
-                book.AuthorName = "Unknown";
-            }
 
             // Remove from author list
             authors.Remove(author);

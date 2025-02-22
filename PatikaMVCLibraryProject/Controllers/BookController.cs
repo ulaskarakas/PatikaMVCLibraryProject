@@ -144,7 +144,7 @@ namespace PatikaMVCLibraryProject.Controllers
         [HttpGet]
         public IActionResult Details(int id)
         {
-            var book = books.FirstOrDefault(a => a.Id == id);
+            var book = books.FirstOrDefault(b => b.Id == id);
 
             if (book == null)
                 return NotFound();
