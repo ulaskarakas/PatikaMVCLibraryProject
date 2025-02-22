@@ -1,6 +1,6 @@
-# Patika - MVC Library Management Project
+# Patika - MVC Library Project
 
-![image](https://github.com/user-attachments/assets/9aeb7dd4-16d7-491c-8283-a6230adfab36)
+![image](https://github.com/user-attachments/assets/f38cf780-2f0b-4f55-8cb4-28f1e1db2338)
 
 This is a **Library Management System** built using **ASP.NET Core MVC**. The system allows users to manage books and authors efficiently.
 
